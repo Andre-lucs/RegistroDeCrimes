@@ -1,4 +1,4 @@
-package com.registrodecrimes.service;
+package com.registrodetreinos.service;
 
 public interface Service<T> {
     public void insert(T object);

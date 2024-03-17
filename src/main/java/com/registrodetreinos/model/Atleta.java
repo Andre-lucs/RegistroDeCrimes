@@ -1,22 +1,24 @@
-package com.registrodecrimes.model;
+package com.registrodetreinos.model;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Reu {
+public class Atleta {
     private Long id;
     private String nome;
+    private List<Treino> treinos;
 
-    public Reu() {
+    public Atleta() {
     }
 
-    public Reu(Long id) {
+    public Atleta(Long id) {
         this.id = id;
     }
 
-    public Reu(Long id, String nome) {
+    public Atleta(Long id, String nome) {
         this.id = id;
+        this.treinos = new ArrayList<>();
         this.nome = nome;
     }
 
@@ -36,12 +38,28 @@ public class Reu {
         this.nome = nome;
     }
 
+    public List<Treino> getTreinos() {
+        return treinos;
+    }
+
+    public void setTreinos(List<Treino> treinos) {
+        this.treinos = treinos;
+    }
+
+    public void addTreino(Treino treino){
+        this.treinos.add(treino);
+    }
+
+    public void removeTreino(Treino treino){
+        this.treinos.remove(treino);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Reu reu = (Reu) o;
-        return Objects.equals(id, reu.id);
+        Atleta atleta = (Atleta) o;
+        return Objects.equals(id, atleta.id);
     }
 
     @Override

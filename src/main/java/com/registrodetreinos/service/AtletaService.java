@@ -1,20 +1,20 @@
-package com.registrodecrimes.service;
+package com.registrodetreinos.service;
 
-import com.registrodecrimes.dao.DelegadoDAO;
-import com.registrodecrimes.model.Delegado;
+import com.registrodetreinos.dao.AtletaDAO;
+import com.registrodetreinos.model.Atleta;
 
 import java.sql.SQLException;
 
-public class DelegadoService implements Service<Delegado> {
-    private DelegadoDAO dao;
+public class AtletaService implements Service<Atleta> {
+    private AtletaDAO dao;
 
-    public DelegadoService() {
-        this.dao = new DelegadoDAO();
+    public AtletaService() {
+        this.dao = new AtletaDAO();
     }
 
     @Override
-    public void insert(Delegado object) {
-        try{
+    public void insert(Atleta object) {
+        try {
             dao.insert(object);
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -22,8 +22,8 @@ public class DelegadoService implements Service<Delegado> {
     }
 
     @Override
-    public void update(Delegado object) {
-        try{
+    public void update(Atleta object) {
+        try {
             dao.update(object);
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -31,17 +31,17 @@ public class DelegadoService implements Service<Delegado> {
     }
 
     @Override
-    public void delete(Delegado object) {
-        try{
-            dao.update(object);
+    public void delete(Atleta object) {
+        try {
+            dao.delete(object);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
     @Override
-    public Delegado findById(Long id) {
-        try{
+    public Atleta findById(Long id) {
+        try {
             return dao.findById(id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -49,7 +49,7 @@ public class DelegadoService implements Service<Delegado> {
     }
 
     @Override
-    public Iterable<Delegado> findAll() {
+    public Iterable<Atleta> findAll() {
         return null;
     }
 }

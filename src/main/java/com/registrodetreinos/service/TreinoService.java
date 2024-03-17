@@ -1,19 +1,19 @@
-package com.registrodecrimes.service;
+package com.registrodetreinos.service;
 
-import com.registrodecrimes.dao.OcorrenciaDAO;
-import com.registrodecrimes.model.Ocorrencia;
+import com.registrodetreinos.dao.TreinoDAO;
+import com.registrodetreinos.model.Treino;
 
 import java.sql.SQLException;
 
-public class OcorrenciaService implements Service<Ocorrencia>{
-    private OcorrenciaDAO dao;
+public class TreinoService implements Service<Treino>{
+    private TreinoDAO dao;
 
-    public OcorrenciaService() {
-        this.dao = new OcorrenciaDAO();
+    public TreinoService() {
+        this.dao = new TreinoDAO();
     }
 
     @Override
-    public void insert(Ocorrencia object) {
+    public void insert(Treino object) {
         try{
             dao.insert(object);
         } catch (SQLException e) {
@@ -22,7 +22,7 @@ public class OcorrenciaService implements Service<Ocorrencia>{
     }
 
     @Override
-    public void update(Ocorrencia object) {
+    public void update(Treino object) {
         try{
             dao.update(object);
         } catch (SQLException e) {
@@ -31,7 +31,7 @@ public class OcorrenciaService implements Service<Ocorrencia>{
     }
 
     @Override
-    public void delete(Ocorrencia object) {
+    public void delete(Treino object) {
         try{
             dao.delete(object);
         } catch (SQLException e) {
@@ -40,7 +40,7 @@ public class OcorrenciaService implements Service<Ocorrencia>{
     }
 
     @Override
-    public Ocorrencia findById(Long id) {
+    public Treino findById(Long id) {
         try{
             return dao.findById(id);
         } catch (SQLException e) {
@@ -49,7 +49,7 @@ public class OcorrenciaService implements Service<Ocorrencia>{
     }
 
     @Override
-    public Iterable<Ocorrencia> findAll() {
+    public Iterable<Treino> findAll() {
         return null;
     }
 }

@@ -1,4 +1,4 @@
-package com.registrodecrimes.servlets;
+package com.registrodetreinos.servlets;
 
 import java.io.*;
 import jakarta.servlet.http.*;

@@ -1,19 +1,19 @@
-package com.registrodecrimes.service;
+package com.registrodetreinos.service;
 
-import com.registrodecrimes.dao.ReuDAO;
-import com.registrodecrimes.model.Reu;
+import com.registrodetreinos.dao.GinasioDAO;
+import com.registrodetreinos.model.Ginasio;
 
 import java.sql.SQLException;
 
-public class ReuService implements Service<Reu> {
-    private ReuDAO dao;
+public class GinasioService implements Service<Ginasio> {
+    private GinasioDAO dao;
 
-    public ReuService() {
-        this.dao = new ReuDAO();
+    public GinasioService() {
+        this.dao = new GinasioDAO();
     }
 
     @Override
-    public void insert(Reu object) {
+    public void insert(Ginasio object) {
         try {
             dao.insert(object);
         } catch (SQLException e) {
@@ -22,7 +22,7 @@ public class ReuService implements Service<Reu> {
     }
 
     @Override
-    public void update(Reu object) {
+    public void update(Ginasio object) {
         try {
             dao.update(object);
         } catch (SQLException e) {
@@ -31,7 +31,7 @@ public class ReuService implements Service<Reu> {
     }
 
     @Override
-    public void delete(Reu object) {
+    public void delete(Ginasio object) {
         try {
             dao.delete(object);
         } catch (SQLException e) {
@@ -40,7 +40,7 @@ public class ReuService implements Service<Reu> {
     }
 
     @Override
-    public Reu findById(Long id) {
+    public Ginasio findById(Long id) {
         try {
             return dao.findById(id);
         } catch (SQLException e) {
@@ -49,7 +49,7 @@ public class ReuService implements Service<Reu> {
     }
 
     @Override
-    public Iterable<Reu> findAll() {
+    public Iterable<Ginasio> findAll() {
         return null;
     }
 }
