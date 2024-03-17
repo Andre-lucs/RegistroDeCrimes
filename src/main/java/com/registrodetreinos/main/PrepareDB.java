@@ -12,10 +12,10 @@ public class PrepareDB {
     public static void main(String[] args) {
         Connection c = DBConnection.getConnection();
         List<String> tabelas = new ArrayList<>();
-        tabelas.add("CREATE TABLE ginasios (id SERIAL PRIMARY KEY, nome VARCHAR(255))");
-        tabelas.add("CREATE TABLE atletas (id SERIAL PRIMARY KEY, nome VARCHAR(255))");
+        tabelas.add("CREATE TABLE ginasios (id INTEGER PRIMARY KEY, nome VARCHAR(255))");
+        tabelas.add("CREATE TABLE atletas (id INTEGER PRIMARY KEY, nome VARCHAR(255))");
         tabelas.add("CREATE TABLE treinos (\n" +
-                "    id SERIAL PRIMARY KEY,\n" +
+                "    id INTEGER PRIMARY KEY,\n" +
                 "    ginasio_id INTEGER,\n" +
                 " 	 data varchar(100),\n" +	
                 "    CONSTRAINT fk_treino_ginasio FOREIGN KEY (ginasio_id) REFERENCES ginasios (id)\n" +

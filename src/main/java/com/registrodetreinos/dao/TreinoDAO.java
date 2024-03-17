@@ -65,6 +65,7 @@ public class TreinoDAO {
         String sql = "UPDATE treinos SET data =? WHERE id =?";
         PreparedStatement stmt = connection.prepareStatement(sql);
         stmt.setString(1, treino.getData());
+        stmt.setLong(2, treino.getId());
         stmt.execute();
     }
 }

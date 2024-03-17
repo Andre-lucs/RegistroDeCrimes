@@ -45,9 +45,10 @@ public class AtletaDAO {
     }
 
     public void insert(Atleta a) throws SQLException {
-        String sql = "INSERT INTO atletas (nome) VALUES (?)";
+        String sql = "INSERT INTO atletas (id, nome) VALUES (?,?)";
         PreparedStatement stmt = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-        stmt.setString(1, a.getNome());
+        stmt.setLong(1, a.getId());
+        stmt.setString(2, a.getNome());
         stmt.executeUpdate();
         ResultSet rs = stmt.getGeneratedKeys();
         if (rs.next() && a.getTreinos() != null) {

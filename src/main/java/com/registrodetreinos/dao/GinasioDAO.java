@@ -41,9 +41,10 @@ public class GinasioDAO {
     }
 
     public void insert(Ginasio g) throws SQLException {
-        String sql = "INSERT INTO ginasios (nome) VALUES (?)";
+        String sql = "INSERT INTO ginasios (id, nome) VALUES (?,?)";
         PreparedStatement stmt = connection.prepareStatement(sql);
-        stmt.setString(1, g.getNome());
+        stmt.setLong(1, g.getId());
+        stmt.setString(2, g.getNome());
         stmt.execute();
     }
 
