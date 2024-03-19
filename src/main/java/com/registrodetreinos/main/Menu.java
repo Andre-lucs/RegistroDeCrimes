@@ -1,4 +1,4 @@
-package com.registrodetreinos.model;
+package com.registrodetreinos.main;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -125,14 +125,7 @@ public class Menu {
         }
     }
 
-    private static void visualizarTodosOsGinasios() {
-        System.out.println("Lista de todos os Ginásios:");
-        Iterable<Ginasio> ginasios = ginasioService.findAll();
-        for (Ginasio ginasio : ginasios) {
-            System.out.println("ID: " + ginasio.getId() + ", Nome: " + ginasio.getNome());
-        }
-    }
-
+ 
     private static void deletarGinasioPorId() {
         System.out.print("Digite o ID do Ginásio que deseja deletar: ");
         Long id = scanner.nextLong();
@@ -212,13 +205,6 @@ public class Menu {
         }
     }
 
-    private static void visualizarTodosOsAtletas() {
-        System.out.println("Lista de todos os Atletas:");
-        Iterable<Atleta> atletas = atletaService.findAll();
-        for (Atleta atleta : atletas) {
-            System.out.println("ID: " + atleta.getId() + ", Nome: " + atleta.getNome());
-        }
-    }
 
     private static void deletarAtletaPorId() {
         System.out.print("Digite o ID do Atleta que deseja deletar: ");
@@ -286,14 +272,7 @@ public class Menu {
         }
     }
 
-    private static void visualizarTodosOsTreinos() {
-        System.out.println("Lista de todos os Treinos:");
-        Iterable<Treino> treinos = treinoService.findAll();
-        for (Treino treino : treinos) {
-            System.out.println(treino.toString());
-        }
-    }
-
+  
     private static void deletarTreinoPorId() {
         System.out.print("Digite o ID do Treino que deseja deletar: ");
         Long id = scanner.nextLong();
