@@ -28,7 +28,6 @@ public class AtletaDAO {
             a = new Atleta();
             a.setId(rs.getLong("id"));
             a.setNome(rs.getString("nome"));
-            //treinos (não retorna outros atributos alem do id)
             String sql2 = "SELECT * FROM treino_atleta WHERE atleta_id =?";
             PreparedStatement stmt2 = connection.prepareStatement(sql2);
             stmt2.setLong(1, id);
